@@ -1,0 +1,33 @@
+###
+GET http://localhost:8080/
+Accept: application/json
+
+###
+GET http://localhost:8080/profile
+Accept: application/json
+
+
+
+###
+GET http://localhost:8080/tasks
+Accept: application/json
+
+###
+GET http://localhost:8080/tasks/2
+Accept: application/json
+
+
+
+###
+PUT http://localhost:8080/tasks/2
+Content-Type: application/json
+
+{
+    "title": "Tarea 3",
+    "description": "Descripcion modif",
+    "taskStatus": "COMPLETED",
+    "status": 1
+}
+
+###
+DELETE http://localhost:8080/tasks/2
