@@ -29,7 +29,7 @@ public class Tasks {
 
     @DeleteMapping(path="/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task deleteOne(@RequestBody Task task) {
-        taskList.remove(task.getTitle());
+        taskList.remove(task.getTaskId());
         return task;
     }
 
