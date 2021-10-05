@@ -9,36 +9,32 @@ Accept: application/json
 
 
 ###
-GET http://localhost:8080/tasks
+GET http://localhost:8080/sakila
 Accept: application/json
 
 ###
-GET http://localhost:8080/tasks/2
+GET http://localhost:8080/sakila/2
 Accept: application/json
 
 
 ###
-POST http://localhost:8080/tasks
+POST http://localhost:8080/sakila
 Content-Type: application/json
 
 {
-    "title": "Tarea 5",
-    "description": "Descripcion",
-    "taskStatus": "COMPLETED",
-    "status": 0
+    "name": "Chinese",
+    "last":"2021-10-04T23:34:57.000+00:00"
 }
 
 
 ###
-PUT http://localhost:8080/tasks/2
+PUT http://localhost:8080/sakila/3
 Content-Type: application/json
 
 {
-    "title": "Tarea 1",
-    "description": "Descripcion",
-    "taskStatus": "COMPLETED",
-    "status": 1
+    "name": "French 1",
+    "last": "2021-10-04T23:34:57.000+00:00"
 }
 
 ###
-DELETE http://localhost:8080/tasks/1
+DELETE http://localhost:8080/sakila/1

@@ -14,28 +14,28 @@ import org.springframework.http.MediaType;
 @RestController
 public class Tasks {
 
-    List<Task> taskList = new ArrayList<>();
+    List<Task> List = new ArrayList<>();
 
-    @GetMapping(path="/taskOld", produces = MediaType.APPLICATION_JSON_VALUE )
+    @GetMapping(path="/sakilaOld", produces = MediaType.APPLICATION_JSON_VALUE )
     public List<Task> listAll() {
-        return taskList;
+        return List;
     }
 
-    @PostMapping(path="/task", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @PostMapping(path="/sakila", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task listAll(@RequestBody Task task) {
-        taskList.add(task);
+        List.add(task);
         return task;
     }
 
-    @DeleteMapping(path="/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @DeleteMapping(path="/sakila/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task deleteOne(@RequestBody Task task) {
-        taskList.remove(task.getTaskId());
+        List.remove(task.getId());
         return task;
     }
 
-    @PutMapping(path="/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @PutMapping(path="/sakila/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task PutOne(@RequestBody Task task) {
-        taskList.set(task.getTaskId(),task);
+        List.set(task.getId(),task);
         return task;
     }
     
