@@ -16,24 +16,24 @@ public class Tasks {
 
     List<Task> List = new ArrayList<>();
 
-    @GetMapping(path="/sakilaOld", produces = MediaType.APPLICATION_JSON_VALUE )
+    @GetMapping(path="/taskOld", produces = MediaType.APPLICATION_JSON_VALUE )
     public List<Task> listAll() {
         return List;
     }
 
-    @PostMapping(path="/sakila", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @PostMapping(path="/task", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task listAll(@RequestBody Task task) {
         List.add(task);
         return task;
     }
 
-    @DeleteMapping(path="/sakila/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @DeleteMapping(path="/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task deleteOne(@RequestBody Task task) {
         List.remove(task.getId());
         return task;
     }
 
-    @PutMapping(path="/sakila/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
+    @PutMapping(path="/task/{id}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE )
     public Task PutOne(@RequestBody Task task) {
         List.set(task.getId(),task);
         return task;
